@@ -4,6 +4,7 @@ import java.util.List;
 
 import br.com.caelum.online.loja.dao.ProdutoDao;
 import br.com.caelum.online.loja.dominio.Produto;
+import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Resource;
 
 @Resource
@@ -22,6 +23,7 @@ public class ProdutoController {
 	public void formulario() {
 	}
 
+	@Post
 	public void adiciona(Produto produto) {
 		produtos.salva(produto);
 	}
