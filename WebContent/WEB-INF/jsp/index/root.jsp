@@ -9,6 +9,6 @@
 <body>
 	Parabéns, o VRaptor está funcionando, e você já pode passar para a próxima seção!
 	
-	Essa aqui será a futura página de entrada da loja!
+	Essa aqui será a futura página de entrada da loja!!!!!!!!!!!!
 </body>
 </html>
