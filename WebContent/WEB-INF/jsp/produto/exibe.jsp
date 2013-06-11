@@ -7,6 +7,6 @@
 <title>Minha Loja</title>
 </head>
 <body>
-	<h1>${produto.nome} - ${produto.preco}</h1>
+	<h1>${produto.nome} - ${produto.preco} - ${produto.cor}</h1>
 </body>
 </html>
