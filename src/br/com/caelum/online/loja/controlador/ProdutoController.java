@@ -45,4 +45,9 @@ public class ProdutoController {
 		result.use(Results.xml()).from(produtos.pegaPorId(id)).serialize();
 	}
 
+	@Path("/produto/{id}/json")
+	public void exibeComoJson(Long id) {
+		result.use(Results.json()).from(produtos.pegaPorId(id)).serialize();
+	}
+
 }
