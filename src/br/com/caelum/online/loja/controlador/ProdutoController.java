@@ -52,12 +52,14 @@ public class ProdutoController {
 
 	@Path("/produto/lista/json")
 	public void listaComoJson() {
-		result.use(Results.json()).from(produtos.pegaTodos()).serialize();
+		result.use(Results.json()).from(produtos.pegaTodos(), "produtos")
+				.serialize();
 	}
 
 	@Path("/produto/lista/xml")
 	public void listaComoXml() {
-		result.use(Results.xml()).from(produtos.pegaTodos()).serialize();
+		result.use(Results.xml()).from(produtos.pegaTodos(), "produtos")
+				.serialize();
 	}
 
 }
