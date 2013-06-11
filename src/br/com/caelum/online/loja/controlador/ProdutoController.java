@@ -22,7 +22,7 @@ public class ProdutoController {
 	}
 
 	public List<Produto> lista() {
-		return new ProdutoDao().pegaTodos();
+		return produtos.pegaTodos();
 	}
 
 	public void formulario() {
