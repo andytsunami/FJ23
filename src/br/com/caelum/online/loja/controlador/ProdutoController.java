@@ -16,8 +16,8 @@ public class ProdutoController {
 	private final ProdutoDao produtos;
 	private final Result result;
 
-	public ProdutoController(Result result) {
-		this.produtos = new ProdutoDao();
+	public ProdutoController(Result result, ProdutoDao produtos) {
+		this.produtos = produtos;
 		this.result = result;
 	}
 
