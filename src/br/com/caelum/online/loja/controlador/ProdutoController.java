@@ -50,4 +50,9 @@ public class ProdutoController {
 		result.use(Results.json()).from(produtos.pegaPorId(id)).serialize();
 	}
 
+	@Path("/produto/lista/json")
+	public void listaComJson() {
+		result.use(Results.json()).from(produtos.pegaTodos()).serialize();
+	}
+
 }
