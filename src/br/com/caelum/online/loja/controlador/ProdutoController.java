@@ -51,8 +51,13 @@ public class ProdutoController {
 	}
 
 	@Path("/produto/lista/json")
-	public void listaComJson() {
+	public void listaComoJson() {
 		result.use(Results.json()).from(produtos.pegaTodos()).serialize();
+	}
+
+	@Path("/produto/lista/xml")
+	public void listaComoXml() {
+		result.use(Results.xml()).from(produtos.pegaTodos()).serialize();
 	}
 
 }
