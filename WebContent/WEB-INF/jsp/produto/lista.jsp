@@ -9,6 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<p style="color: #FF0000; font-weight: bold;">${mensagem}</p>
+
 	<table>
 		<c:forEach var="produto" items="${produtoList}">
 			<tr>
