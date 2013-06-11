@@ -10,7 +10,7 @@
 <body>
 	<form action="<c:url value="/produto/adiciona" />" method="post">
 	Nome: <input type="text" name="produto.nome" /><br />
-	Descrição: <input type="text" name="produto.desrcicao" /><br />
+	Descrição: <input type="text" name="produto.descricao" /><br />
 	Preço: <input type="text" name="produto.preco" /><br />
 	Cor: <input type="text" name="produto.cor" /><br />
 	

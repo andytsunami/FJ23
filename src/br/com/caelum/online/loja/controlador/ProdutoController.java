@@ -7,14 +7,17 @@ import br.com.caelum.online.loja.dominio.Produto;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Resource;
+import br.com.caelum.vraptor.Result;
 
 @Resource
 public class ProdutoController {
 
 	private final ProdutoDao produtos;
+	private final Result result;
 
-	public ProdutoController() {
+	public ProdutoController(Result result) {
 		this.produtos = new ProdutoDao();
+		this.result = result;
 	}
 
 	public List<Produto> lista() {
@@ -27,6 +30,7 @@ public class ProdutoController {
 	@Post
 	public void adiciona(Produto produto) {
 		produtos.salva(produto);
+		result.redirectTo(ProdutoController.class).lista();
 	}
 
 	@Path("/produto/{id}")
