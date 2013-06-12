@@ -10,7 +10,7 @@
 <script type="text/javascript">
 function remover(id){
 	$.get('remove?produto.id='+id,function() {
-		alert('Removido com sucesso!');
+		//alert('Removido com sucesso!');
 		$('#produto-'+id).hide();
 	});
 }
