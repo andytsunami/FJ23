@@ -4,6 +4,7 @@ import java.util.List;
 
 import br.com.caelum.online.loja.dao.ProdutoDao;
 import br.com.caelum.online.loja.dominio.Produto;
+import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Resource;
@@ -84,6 +85,12 @@ public class ProdutoController {
 	public void listaComoXml() {
 		result.use(Results.xml()).from(produtos.pegaTodos(), "produtos")
 				.serialize();
+	}
+
+	@Get
+	public void remove(Produto produto) {
+		produtos.remove(produto);
+		result.nothing();
 	}
 
 }
