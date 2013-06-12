@@ -8,6 +8,12 @@
 <title>Minha Loja</title>
 </head>
 <body>
+
+<c:forEach var="error" items="${errors}">
+  ${error.category} - ${error.message}
+</c:forEach>
+
+
 	<form action="<c:url value="/produto/adiciona" />" method="post">
 	Nome: <input type="text" name="produto.nome" /><br />
 	Descrição: <input type="text" name="produto.descricao" /><br />
