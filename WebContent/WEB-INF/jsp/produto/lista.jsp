@@ -11,6 +11,7 @@
 function remover(id){
 	$.get('remove?produto.id='+id,function() {
 		alert('Removido com sucesso!');
+		$('#produto-'+id).hide();
 	});
 }
 
@@ -22,7 +23,7 @@ function remover(id){
 
 	<table>
 		<c:forEach var="produto" items="${produtoList}">
-			<tr>
+			<tr id="produto-${produto.id}">
 				<td>${produto.nome}</td>
 				<td>${produto.descricao}</td>
 				<td>${produto.preco}</td>
