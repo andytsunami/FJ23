@@ -38,7 +38,17 @@ public class ProdutoController {
 
 		validator.checking(new Validations() {
 			{
-				that(produto.getPreco() > 0.1, "erro", "produto.preco.invalido");
+				that(produto.getPreco() > 0.1, "preco",
+						"produto.preco.invalido");
+				that(produto.getDescricao() != null
+						&& produto.getDescricao().length() > 0, "descricao",
+						"produto.descricao.invalido");
+				that(produto.getNome() != null
+						&& produto.getNome().length() > 0
+						&& produto.getNome().length() <= 100, "nome",
+						"produto.nome.invalido");
+				that(produto.getCor() != null && produto.getCor().length() > 0,
+						"cor", "produto.cor.invalido");
 			}
 		});
 
