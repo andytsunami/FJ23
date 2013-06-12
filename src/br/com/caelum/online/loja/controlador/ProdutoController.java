@@ -9,7 +9,7 @@ import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.Validator;
-import br.com.caelum.vraptor.validator.I18nMessage;
+import br.com.caelum.vraptor.validator.Validations;
 import br.com.caelum.vraptor.view.Results;
 
 @Resource
@@ -36,9 +36,11 @@ public class ProdutoController {
 	@Post
 	public void adiciona(final Produto produto) {
 
-		if (produto.getPreco() < 0.1) {
-			validator.add(new I18nMessage("preco", "produto.preco.invalido"));
-		}
+		validator.checking(new Validations() {
+			{
+				that(produto.getPreco() > 0.1, "erro", "produto.preco.invalido");
+			}
+		});
 
 		validator.onErrorUsePageOf(ProdutoController.class).formulario();
 
