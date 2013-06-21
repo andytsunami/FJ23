@@ -1,2 +1,7 @@
 bin/**
 WebContent/WEB-INF/classes/
+*.class
+.Ds_Store
+/.settings
+.classpath
+*.*~
